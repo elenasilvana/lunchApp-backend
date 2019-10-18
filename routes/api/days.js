@@ -1,11 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
 
-const Day = require('../models/Day');
+const Day = require('../../models/Day');
 
 // POST DAY
-
 router.post('/', (req, res) => {
 
   const newDay = new Day({
@@ -21,9 +19,10 @@ router.post('/', (req, res) => {
 });
 
 // GET ALL DAYS
-
 router.get('/', (req, res) => {
-	Days.find()
+	Day.find()
 	  .then()
 	  .then(days => res.json(days));
   });
+
+module.exports = router;
